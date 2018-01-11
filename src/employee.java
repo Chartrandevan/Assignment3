@@ -118,8 +118,8 @@
       **************************************************/
      public double getOverPay(){
          double overpay = 0.0;
-         if(this.getHours() <= 40){
-         overpay = hourwage * (this.getHours() - 40);
+         if(this.getHours() >= 40){
+         overpay = hourwage * (this.getHours() - 40) * 1.5;
          }//end if 
          return overpay;
 } // end getId
@@ -136,4 +136,14 @@
 } // end getId
  	// ********** mutators **********
  
+     public String toString(){
+String strout;
+strout = "Employee " + this.getId() + "\n";
+strout += "Hours worked: " + this.getHours() + "\n";
+strout += "Hourly wage: " + this.getHourWage() + "\n";
+strout += "Regular pay: " + this.getRegPay() + "\n";
+strout += "Overtime pay: " + this.getOverPay() + "\n";
+strout += "Gross pay: " + this.getGrossPay() + "\n\n";
+return strout;         
+     }//end to String
  }  // end class

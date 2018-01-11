@@ -14,6 +14,7 @@
 
 import javax.swing.*;
 import java.text.DecimalFormat;
+import java.util.Random;
 
 public class employeeClient
 {  // begin class
@@ -23,8 +24,14 @@ public class employeeClient
 	
 	// ***** declaration of variables *****
 	
+         employee[] emparray = new employee[5];
+            
 	// ***** create objects *****
 		
+            for(int count = 0; count < 5; count++){
+             emparray[count] = new employee(new Random().nextInt(60) + 1, new Random().nextInt(35) + 5);
+            }//end for
+            
 		
 	// ***** create input stream *****
 	
@@ -49,7 +56,9 @@ public class employeeClient
 		
 	// ***** output *****
 	
-		// all formatted ouput is printed in this section
+	for(int count = 0; count < 5; count++){
+          System.out.println(emparray[count].toString()) ; 
+        }//end for
 
 	// ***** closing message *****
 	
