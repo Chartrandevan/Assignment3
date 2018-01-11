@@ -23,7 +23,7 @@
  	// ********** instance variable **********
  	
         int id;
-        double hourwage;//hourly wage
+        int hourwage;//hourly wage
         int hours;
         
         
@@ -50,7 +50,7 @@
       * in:        
       * returns:    none
       **************************************************/
-     public employee(int i, double r){
+     public employee(int i, int r){
          id = nextID++;     // set id and incremnet next id
          hours = i;
          hourwage = r;
@@ -87,7 +87,7 @@
       * in:         none
       * returns:    id: int
       **************************************************/
-     public double getHourWage(){
+     public int getHourWage(){
          return hourwage;
 } // end getHourWage
      
@@ -98,8 +98,8 @@
       * in:         none
       * returns:    id: int
       **************************************************/
-     public double getRegPay(){
-         double regpay = 0.0;
+     public int getRegPay(){
+         int regpay = 0;
          if(this.getHours() <= 40){
          regpay = hourwage * this.getHours();
          }//end if
