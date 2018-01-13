@@ -23,7 +23,7 @@
  	// ********** instance variable **********
  	
         int id;
-        int hourwage;//hourly wage
+        double hourwage;//hourly wage
         int hours;
         
         
@@ -49,6 +49,8 @@
       * Interface:
       * in:        
       * returns:    none
+     * @param i
+     * @param r
       **************************************************/
      public employee(int i, int r){
          id = nextID++;     // set id and incremnet next id
@@ -87,7 +89,7 @@
       * in:         none
       * returns:    id: int
       **************************************************/
-     public int getHourWage(){
+     public double getHourWage(){
          return hourwage;
 } // end getHourWage
      
@@ -98,8 +100,8 @@
       * in:         none
       * returns:    id: int
       **************************************************/
-     public int getRegPay(){
-         int regpay = 0;
+     public double getRegPay(){
+         double regpay = 0;
          if(this.getHours() <= 40){
          regpay = hourwage * this.getHours();
          }//end if
@@ -146,4 +148,9 @@ strout += "Overtime pay: " + this.getOverPay() + "\n";
 strout += "Gross pay: " + this.getGrossPay() + "\n\n";
 return strout;         
      }//end to String
+     
+     public void formatedOutput(){
+    
+     System.out.format("%8s %7s %4s %.2f %5s %.2f %4s %.2f %3s %.2f\n",this.getId(),this.getHours(),"$",this.getHourWage(),"$",this.getRegPay(),"$",this.getOverPay(),"$",this.getGrossPay() );
+     }//end forout
  }  // end class

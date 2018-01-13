@@ -28,7 +28,7 @@ public class employeeClient
 	
 	// ***** declaration of variables *****
 	
-            String tokens [] = null;
+            String[] tokens  = null;
             String strin;
             String delim = " "; //a delimeter for parsing strings
          employee[] emparray = new employee[5];
@@ -40,7 +40,7 @@ public class employeeClient
             for(int count = 0; count < 5; count++){
               strin = fin.readLine();
               tokens = strin.split(delim);
-             emparray[count](Integer.parseInt(tokens[0], Integer.parseInt(tokens[1]));//declares employee object with random hours worked and hourly wage
+                emparray[count] = new employee(Integer.parseInt(tokens[0]),Integer.parseInt(tokens[1])); //declares employee object with random hours worked and hourly wage
             }//end for
             
 		
@@ -66,11 +66,14 @@ public class employeeClient
 	
 		
 	// ***** output *****
-	
+        
+	 System.out.format("%8s %6s %7s %9s %6s %8s \n","Employee id","Hours","Hourly wage","Regular Pay","Overtime","Gross Pay");
 	for(int count = 0; count < 5; count++){
-          System.out.println(emparray[count].toString()) ; 
+         emparray[count].formatedOutput();
         }//end for
 
+        
+        
 	// ***** closing message *****
 	
 		System.out.println("end of processing");
