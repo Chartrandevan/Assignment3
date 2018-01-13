@@ -1,10 +1,10 @@
 /* **********************************************************
- * Programmer:	Rob Sveinson
- * Class:		CS20S
+ * Programmer:	Evan Chartrand
+ * Class:		CS30S
  * 
- * Assignment:	aX  qY
+ * Assignment:	Assignment3
  *
- * Description:	describe the class you are creating
+ * Description:	An employee object
  *
  * 
  * *************************************************************
@@ -24,7 +24,7 @@
  	
         int id;
         double hourwage;//hourly wage
-        int hours;
+        int hours; //hours worked
         
         
  	// ********** constructors ***********
@@ -43,14 +43,12 @@
      } // end default constructor
      
       /**************************************************
-      * Purpose:    create a new circle object with initialized 
+      * Purpose:    create a new employee object with initialized 
       *             properties
       * 
       * Interface:
-      * in:        
+      * in:    hours worked and hourly wage   
       * returns:    none
-     * @param i
-     * @param r
       **************************************************/
      public employee(int i, int r){
          id = nextID++;     // set id and incremnet next id
@@ -76,66 +74,66 @@
       * 
       * Interface:
       * in:         none
-      * returns:    id: int
+      * returns:    hours worked
       **************************************************/
      public int getHours(){
          return hours;
-} // end getHourWage
+} // end getHours
      
          /**************************************************
       * Purpose:    get the hourly wage
       * 
       * Interface:
       * in:         none
-      * returns:    id: int
+      * returns:    hourly wage
       **************************************************/
      public double getHourWage(){
          return hourwage;
 } // end getHourWage
      
          /**************************************************
-      * Purpose:    get the hours worked
+      * Purpose:    get the regularpay
       * 
       * Interface:
       * in:         none
-      * returns:    id: int
+      * returns:    regular pay
       **************************************************/
      public double getRegPay(){
          double regpay = 0;
          if(this.getHours() <= 40){
-         regpay = hourwage * this.getHours();
+         regpay = this.getHourWage() * this.getHours();
          }//end if
          else{
-          regpay = hourwage * 40;   
+          regpay = this.getHourWage() * 40;   
          }//end else  
          return regpay;
-} // end getId
+} // end getRegPay
      
             /**************************************************
-      * Purpose:    get the hours worked
+      * Purpose:    get the overtime pay
       * 
       * Interface:
-      * in:         none
-      * returns:    id: int
+      * in:         
+      * returns:    the overtime pay
       **************************************************/
      public double getOverPay(){
          double overpay = 0.0;
          if(this.getHours() >= 40){
-         overpay = hourwage * (this.getHours() - 40) * 1.5;
+         overpay = this.getHourWage() * (this.getHours() - 40) * 1.5;
          }//end if 
          return overpay;
-} // end getId
+} // end getoverpay
      
             /**************************************************
-      * Purpose:    get the hours worked
+      * Purpose:    get the gross pay
       * 
       * Interface:
       * in:         none
-      * returns:    id: int
+      * returns:    gross pay
       **************************************************/
      public double getGrossPay(){ 
          return this.getOverPay() + this.getRegPay();
-} // end getId
+} // end getgrosspay
  	// ********** mutators **********
  
      public String toString(){

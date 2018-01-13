@@ -1,15 +1,15 @@
 // **********************************************************************
-// Programmer:	Rob Sveinson
-// Class:		CS20S
+// Programmer:	Evan chartrand
+// Class:		CS30S
 //
-// Assignment:	aX qy
+// Assignment:	Assignment3
 //
-// Description:	a brief description of the program goes here
+// Description:	Displays the payroll for some employees
 //
 //
-//	Input:		describe any input from keyboard or file
+//	Input:		a data file with wages and hours worked
 //
-//  Output:		describe the result of your program
+//  Output:		prints some information about the employees compensation
 // ***********************************************************************
 
 import java.io.BufferedReader;
@@ -31,7 +31,7 @@ public class employeeClient
             String[] tokens  = null;
             String strin;
             String delim = " "; //a delimeter for parsing strings
-         employee[] emparray = new employee[5];
+         employee[] emparray = new employee[5];//makes an array of employees
             
          
 	// ***** create objects *****
@@ -54,25 +54,18 @@ public class employeeClient
 		System.out.println("NAME:        Evan");
 		System.out.println("Class:       CS30S");
 		System.out.println("Assignment:  Assignment 36");
-		System.out.println("**********************************");
-		
-	// ***** get input *****
-	
-		// all input is gathered in this section
-		// remember to put ConsoleReader.class into the
-		// same folder.
-	
-	// ***** processing *****
-	
-		
+		System.out.println("**********************************");//prints a banner
+
 	// ***** output *****
         
-	 System.out.format("%8s %6s %7s %9s %6s %8s \n","Employee id","Hours","Hourly wage","Regular Pay","Overtime","Gross Pay");
+	 System.out.format("%8s %6s %7s %9s %6s %8s \n","Employee id","Hours","Hourly wage","Regular Pay","Overtime","Gross Pay");//prints a table 
 	for(int count = 0; count < 5; count++){
-         emparray[count].formatedOutput();
+         emparray[count].formatedOutput();//prints the info for the table
         }//end for
 
-        
+        System.out.println("\n Employee 1004's regular pay: " + "$" + emparray[4].getRegPay());
+        System.out.println("\n Employee 1002's overtime pay: " + "$" + emparray[2].getOverPay());
+        System.out.println("\n Employee 1003's hourly wage: " + "$" + emparray[3].getHourWage());//prints some specific info
         
 	// ***** closing message *****
 	
